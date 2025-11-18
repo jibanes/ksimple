@@ -160,6 +160,7 @@ int main(int c,char**v){u r=2==c;                   //!< entry point: r=0 is rep
          x(e(l),                                    //!< else, evaluate buffer b[] and put result into x, then:
            58==l[1]?x                               //!<   if b starts with a global assignment e.g. a:7, suppress output and cycle repl.
                    :_x(W(x)));}                     //!<   otherwise, pretty print evaluation result to stdout, then cycle repl.
-  R free(l),fclose(t),0;}                           //!< in c, return value of main() is the exit code of the process, 0 is success.
+  if(t)fclose(t);
+  R free(l),0;}                                     //!< in c, return value of main() is the exit code of the process, 0 is success.
 
 //:~
